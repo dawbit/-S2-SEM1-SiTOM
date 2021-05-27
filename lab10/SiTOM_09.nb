@@ -1,0 +1,254 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9418,        246]
+NotebookOptionsPosition[      8275,        217]
+NotebookOutlinePosition[      8675,        233]
+CellTagsIndexPosition[      8632,        230]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Model M/M/1 cd", "Chapter",
+ CellChangeTimes->{{3.830444600965891*^9, 3.8304446188621798`*^9}, {
+  3.830444678223662*^9, 
+  3.830444682370072*^9}},ExpressionUUID->"3b4f43aa-da27-4957-b823-\
+bf4f36aab71e"],
+
+Cell[CellGroupData[{
+
+Cell["Rozk\[LSlash]ad czasu oczekiwania i przebywania", "Section",
+ CellChangeTimes->{{3.83044534792284*^9, 
+  3.8304453559725323`*^9}},ExpressionUUID->"63a48dfb-e098-49d1-a177-\
+e24f4210f505"],
+
+Cell["\<\
+1. Rozwa\:017cmy model M/M/1 z intensywno\:015bci\:0105 strumienia \
+wej\:015bciowego \[Lambda] i intensywno\:015bci\:0105 obs\[LSlash]ugi \[Mu]. 
+(a) Wyznacz (symbolicznie) rozk\[LSlash]ad czasu przebywania \
+zg\[LSlash]oszenia w systemie i czasu oczekiwania na obs\[LSlash]ug\:0119. 
+(b) Za\[LSlash]\[OAcute]\:017cmy, \:017ce \[Lambda]=15/min. Aktualnie serwer \
+jest w stanie obs\[LSlash]u\:017cy\[CAcute] 15.1 zg\[LSlash]oszenia w \
+ci\:0105gu minuty. Jaki jest odsetek zg\[LSlash]osze\:0144, kt\[OAcute]re b\
+\:0119d\:0105 musia\[LSlash]y czeka\[CAcute] na obs\[LSlash]ug\:0119 d\
+\[LSlash]u\:017cej ni\:017c 5 min?
+(c) Po narzekaniach u\:017cytkownik\[OAcute]w, postanowiono wymieni\[CAcute] \
+stary serwer na nowszy. Jak\:0105 intensywno\:015b\[CAcute] obs\[LSlash]ugi \
+powinien zapewni\[CAcute] nowy serwer, aby odsetek u\:017cytkownik\[OAcute]w \
+czekaj\:0105cych na rozpocz\:0119cie obs\[LSlash]ugi d\[LSlash]u\:017cej ni\
+\:017c 5 min nie przekroczy\[LSlash] 0.01?\
+\>", "Text",
+ CellChangeTimes->{{3.83044536163923*^9, 3.830445701176263*^9}, 
+   3.830445848284059*^9, {3.830447959894059*^9, 3.830448015179554*^9}, {
+   3.830448262605908*^9, 3.830448400629548*^9}, {3.830449072490786*^9, 
+   3.8304490811516933`*^9}, {3.830449147136401*^9, 
+   3.830449150653379*^9}},ExpressionUUID->"00933424-e814-4496-bec9-\
+33c83ad52a40"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Obs\[LSlash]uga priorytet\[OAcute]w", "Section",
+ CellChangeTimes->{{3.830445216547579*^9, 
+  3.830445225558597*^9}},ExpressionUUID->"af19b9a5-5329-4d15-a664-\
+fce9699090b6"],
+
+Cell[TextData[{
+ "2. Serwer przyjmuje dwa typy zg\[LSlash]osze\:0144. Zg\[LSlash]oszenia \
+tworz\:0105 strumie\:0144 Poissona z intensywno\:015bciami ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Lambda]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "33123dab-85db-46b2-afb9-af4f70afe159"],
+ " (typ 1) i ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Lambda]", "2"], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97571a4a-6aea-42cc-a316-d74d44b3ab1c"],
+ "(typ 2). Obs\[LSlash]uga dla ka\:017cdego ze zg\[LSlash]osze\:0144 ma rozk\
+\[LSlash]ad wyk\[LSlash]adniczy z parametrem \[Mu]. Wyznacz \:015brednie \
+czasy oczekiwania i przebywania w systemie zg\[LSlash]osze\:0144 ka\:017cdego \
+typu oraz ich \:015bredni\:0105 liczb\:0119. Zbadaj wp\[LSlash]yw parametr\
+\[OAcute]w wej\:015bciowych na te charakterystyki w przypadku gdy \
+zg\[LSlash]oszenia typu pierwszego maj\:0105 priorytet bezwzgl\:0119dny i \
+wzgl\:0119dny nad zg\[LSlash]oszeniami typu drugiego."
+}], "Text",
+ CellChangeTimes->{{3.83044524201966*^9, 3.8304453130149393`*^9}, 
+   3.83044536459048*^9, {3.830448546877198*^9, 3.830448579704904*^9}, {
+   3.83044867216672*^9, 3.830448706084177*^9}, {3.8304487377631893`*^9, 
+   3.830448811895569*^9}, {3.8304490264073963`*^9, 
+   3.830449058514161*^9}},ExpressionUUID->"00eec474-d5c4-4255-bb82-\
+ce3f7372c159"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Model M/M/c", "Section",
+ CellChangeTimes->{{3.830449265514696*^9, 
+  3.83044926932722*^9}},ExpressionUUID->"f8ac6616-2e60-4d6f-ad5b-\
+c18c3b7bf7fd"],
+
+Cell[TextData[{
+ "3. Zadania obs\[LSlash]ugiwane s\:0105 przez c serwer\[OAcute]w. Strumie\
+\:0144 wej\:015bciowy jest procesem Poissona o intensywno\:015bci \[Lambda], \
+a obs\[LSlash]uga odbywa si\:0119 z intensywno\:015bci\:0105 \[Mu]. \n(a) \
+Wyznacz stacjonarny rozk\[LSlash]ad liczby zada\:0144 w systemie dla ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "=", "10"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fb53d515-6cb6-4bb3-bac1-48c07ff1fb22"],
+ " . Zbadaj wp\[LSlash]yw liczby serwer\[OAcute]w na prawdopodobie\:0144stwo \
+op\[OAcute]\:017anienia dla trzech wybranych obci\:0105\:017ce\:0144 \[Rho]. \
+\n(b) Wyznacz rozk\[LSlash]ad liczby zaj\:0119tych stanowisk dla ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "=", "15"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "17a8cec6-9e85-494f-a4f7-a722a08c0a86"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.8304492729552813`*^9, 3.8304492737160883`*^9}, {
+   3.830449481917288*^9, 3.8304496438900642`*^9}, {3.8304496865261507`*^9, 
+   3.830449731194659*^9}, {3.830450389783313*^9, 3.8304504217245913`*^9}, 
+   3.830450485062508*^9},ExpressionUUID->"6ebf9470-b8ea-40b6-83b1-\
+3fe1453e1d7d"],
+
+Cell[TextData[{
+ "Do oblicze\:0144 przyda si\:0119 pewna formu\[LSlash]a. Okazuje si\:0119, \
+\:017ce prawdopodobie\:0144stwo op\[OAcute]\:017anienia ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPi]", "W"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "159467a9-5a7d-4b29-a508-3d2ec0051828"],
+ " jest zwi\:0105zane z prawdopodobie\:0144stwem ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", 
+    RowBox[{"(", 
+     RowBox[{"c", ",", " ", "\[Rho]"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3999403b-e8ab-4f53-84f8-0c3e8c794e2b"],
+ " utraty zg\[LSlash]oszenia w modelu ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"M", "/", "M"}], "/", "c"}], "/", "c"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1a09c721-ee98-4615-ad5d-b85a59b30a51"],
+ ". Prawdopodobie\:0144stwo ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", 
+    RowBox[{"(", 
+     RowBox[{"c", ",", " ", "\[Rho]"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "21bd8bd8-f248-43ee-b008-6e3219d7d8d5"],
+ " spe\[LSlash]nia zale\:017cno\:015b\[CAcute] rekurencyjn\:0105:\n",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"B", "(", 
+     RowBox[{"c", ","}]}],
+    FontSize->24], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4879d8c3-1fd2-4224-9783-70407c013a42"],
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     RowBox[{"\[Rho]", ")"}], "=", 
+     FractionBox[
+      RowBox[{"\[Rho]", " ", 
+       RowBox[{"B", "(", 
+        RowBox[{
+         RowBox[{"c", "-", "1"}], ",", " ", "\[Rho]"}], ")"}]}], 
+      RowBox[{"c", "+", 
+       RowBox[{"\[Rho]", " ", 
+        RowBox[{"B", "(", 
+         RowBox[{
+          RowBox[{"c", "-", "1"}], ",", "\[Rho]"}], ")"}]}]}]]}],
+    FontSize->24], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fe598168-6977-4a0c-bb71-77bdb7af9973"],
+ ".\nPrzy pomocy tego wyra\:017cenia mo\:017cemy sprawnie wyznaczy\[CAcute] \
+prawdopodobie\:0144stwo op\[OAcute]\:017anienia:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[CapitalPi]", "W"], "=", 
+    FractionBox[
+     RowBox[{"\[Rho]", " ", 
+      RowBox[{"B", "(", 
+       RowBox[{
+        RowBox[{"c", "-", "1"}], ",", " ", "c\[Rho]"}], ")"}]}], 
+     RowBox[{"1", "-", "\[Rho]", "+", 
+      RowBox[{"\[Rho]B", "(", 
+       RowBox[{
+        RowBox[{"c", "-", "1"}], ",", "c\[Rho]"}], ")"}]}]]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->24,ExpressionUUID->"c360486a-4de9-4d91-a9e4-5a7360feac2a"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.830449795174941*^9, 3.830449900138624*^9}, {
+  3.830449969593815*^9, 3.830450010459115*^9}, {3.830450047075347*^9, 
+  3.8304502526809587`*^9}, {3.830450404529408*^9, 
+  3.830450479307735*^9}},ExpressionUUID->"803d7771-91de-4315-8f71-\
+335b7d74a60f"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{651., 654.75},
+WindowMargins->{{109.5, Automatic}, {15.75, Automatic}},
+FrontEndVersion->"12.1 for Linux x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ec22b208-a2d9-410b-92d7-074637b473fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 210, 4, 69, "Chapter",ExpressionUUID->"3b4f43aa-da27-4957-b823-bf4f36aab71e"],
+Cell[CellGroupData[{
+Cell[815, 30, 193, 3, 68, "Section",ExpressionUUID->"63a48dfb-e098-49d1-a177-e24f4210f505"],
+Cell[1011, 35, 1346, 21, 265, "Text",ExpressionUUID->"00933424-e814-4496-bec9-33c83ad52a40"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2394, 61, 180, 3, 68, "Section",ExpressionUUID->"af19b9a5-5329-4d15-a664-fce9699090b6"],
+Cell[2577, 66, 1400, 28, 150, "Text",ExpressionUUID->"00eec474-d5c4-4255-bb82-ce3f7372c159"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4014, 99, 155, 3, 68, "Section",ExpressionUUID->"f8ac6616-2e60-4d6f-ad5b-c18c3b7bf7fd"],
+Cell[4172, 104, 1199, 24, 150, "Text",ExpressionUUID->"6ebf9470-b8ea-40b6-83b1-3fe1453e1d7d"],
+Cell[5374, 130, 2873, 83, 209, "Text",ExpressionUUID->"803d7771-91de-4315-8f71-335b7d74a60f"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
